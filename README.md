@@ -134,4 +134,4 @@ Products are defined in `data/products.ts` with:
 - **React Context**: State management
 - **Shadcn/ui**: Modern UI components
 
-STILL UNDER DEVLOPMENT BUT THERE IS SOME PRIVEW-https://shope-now.vercel.app/sign-up/verify-email-address
+STILL UNDER DEVLOPMENT BUT THERE IS SOME PRIVEW-https://shope-now.vercel.app
