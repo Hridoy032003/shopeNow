@@ -1,5 +1,7 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";   
+import { CartProvider } from "@/context/CartContext";
+import { ClerkProvider } from "@clerk/nextjs";
+
 export default function RootLayout({
   children,
 }: {
@@ -8,10 +10,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="flex min-h-screen flex-col  px-50">
-     
-          {children}
-        </main>
+        <ClerkProvider>
+          <CartProvider>
+            <main className="flex min-h-screen flex-col px-50">{children}</main>
+          </CartProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

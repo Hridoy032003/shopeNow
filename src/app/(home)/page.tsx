@@ -20,6 +20,22 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ecommerceFAQ } from "@/data/commonData";
+
+interface Product {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  price: number;
+  salePrice: number | null;
+  onSale: boolean;
+  imageUrl: string;
+}
+interface fanq {
+  question: string;
+  answer: string;
+}
+
 const images = [
   "/pexels-tima-miroshnichenko-6693161.jpg",
   "/pexels-godisable-jacob-226636-923210.jpg",
@@ -28,8 +44,11 @@ const images = [
 ];
 export default function Home() {
   const [image, setImage] = useState<string>("");
-  const [trendingProducts, setTrendingProducts] = useState<any[]>([]);
-  const [faq, setFaq] = useState<any[]>([]);
+  const [trendingProducts, setTrendingProducts] = useState<Product[]>([]);
+  const [faq, setFaq] = useState<fanq[]>([]);
+
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       const randomImage = images[Math.floor(Math.random() * images.length)];
