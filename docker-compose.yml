@@ -12,9 +12,9 @@ services:
     
 
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_USER: hridoy
+      POSTGRES_PASSWORD: sgdjhagj
+      POSTGRES_DB: storeDb
 
     ports:
       - '5432:5432'

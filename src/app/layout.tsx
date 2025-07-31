@@ -15,6 +15,7 @@ export default function RootLayout({
             <main className="flex min-h-screen flex-col px-50">{children}</main>
           </CartProvider>
         </ClerkProvider>
+   
       </body>
     </html>
   );

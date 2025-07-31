@@ -50,7 +50,7 @@ const menuItems = [
     component: UserComponent,
   },
   {
-    title: "PackageCheck",
+    title: "Product-order",
     icon: PackageCheck,
     component: PackageCheckComponent, // Make sure all items have a component
   },
