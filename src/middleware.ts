@@ -47,18 +47,17 @@ console.log("session data is",sessionClaims);
     sessionClaims.user_metadata.role === "admin" &&
     !isAdminRoute(req)
   ) {
-    // ...redirect them to their main admin dashboard.
+
     const adminUrl = new URL("/admin", req.url);
     return NextResponse.redirect(adminUrl);
   }
 
-  // If none of the above conditions are met, allow the request to proceed.
   return NextResponse.next();
 });
 
 export const config = {
   matcher: [
-    // Your existing matcher configuration
+
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
     "/(api|trpc)(.*)",
   ],
