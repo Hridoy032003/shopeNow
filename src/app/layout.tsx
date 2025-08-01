@@ -1,6 +1,6 @@
 import "./globals.css";
-import { CartProvider } from "@/context/CartContext";
-import { ClerkProvider } from "@clerk/nextjs";
+import { Providers } from "@/context/Providers";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export default function RootLayout({
   children,
@@ -8,14 +8,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en">    
       <body>
-        <ClerkProvider>
-          <CartProvider>
-            <main className="flex min-h-screen flex-col px-50">{children}</main>
-          </CartProvider>
-        </ClerkProvider>
-   
+        <Providers>
+          <main className="flex min-h-screen flex-col px-50">{children}</main>
+        </Providers>
+         <ToastContainer
+         position="bottom-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Bounce} />
       </body>
     </html>
   );

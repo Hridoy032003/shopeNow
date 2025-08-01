@@ -10,33 +10,25 @@ import {
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import HomeComponent from "./components/HomeComponent";
+import ProductComponentAdd from "./components/ProductComponentAdd";
+import BillingComponent from "./components/BillingComponent";
 
-// --- Mock Components for demonstration ---
-const HomeComponent = () => (
-  <div className="p-4">
-    <h1>Home Content</h1>
-  </div>
-);
+
+
+
 const UserComponent = () => (
   <div className="p-4">
     <h1>User Management</h1>
   </div>
 );
-const PackageCheckComponent = () => (
-  <div className="p-4">
-    <h1>Package Check</h1>
-  </div>
-);
+
 const SearchComponent = () => (
   <div className="p-4">
     <h1>Search</h1>
   </div>
 );
-const BillingComponent = () => (
-  <div className="p-4">
-    <h1>Billing</h1>
-  </div>
-);
+
 
 const menuItems = [
   {
@@ -52,7 +44,7 @@ const menuItems = [
   {
     title: "Product-order",
     icon: PackageCheck,
-    component: PackageCheckComponent, // Make sure all items have a component
+    component: ProductComponentAdd, // Make sure all items have a component
   },
   {
     title: "Search",
@@ -77,7 +69,7 @@ const Page = () => {
   const ActiveComponent = menuItems[activeIndex]?.component;
 
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-row scroll-none  ">
       <div className="bg-white min-h-screen p-5 flex flex-col gap-4 text-gray-500 w-1/5 border-r justify-between">
         <div className="flex flex-col gap-5 mt-5">
           {menuItems.map((item, index) => (
